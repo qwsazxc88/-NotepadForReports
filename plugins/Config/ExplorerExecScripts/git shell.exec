@@ -1,0 +1,23 @@
+//Explorer: NppExec.dll EXP_FULL_PATH[0]
+// ------------------------------------------------------------------
+// NOTE: The first line is in every script necessary
+// Format of the first line:
+//   //Explorer:          = Identification for Explorer support
+//   NppExec.dll          = NppExec DLL identification
+//   EXP_FULL_PATH[0] ... = Exec arguments - [0]=First selected file
+// ------------------------------------------------------------------
+// Example for selected files in file list of Explorer:
+// - C:\Folder1\Folder2\Filename1.Ext
+// - C:\Folder1\Folder2\Filename2.Ext
+// ------------------------------------------------------------------
+// EXP_FULL_PATH[1]       = C:\Folder1\Folder2\Filename2.Ext
+// EXP_ROOT_PATH[0]       = C:
+// EXP_PARENT_FULL_DIR[0] = C:\Folder1\Folder2
+// EXP_PARENT_DIR[0]      = Folder2
+// EXP_FULL_FILE[1]       = Filename2.Ext
+// EXP_FILE_NAME[0]       = Filename1
+// EXP_FILE_EXT[0]        = Ext
+
+// NppExec script body:
+cd "$(ARGV[1])"
+"D:\Program Files (x86)\Git\bin\sh.exe" --login -

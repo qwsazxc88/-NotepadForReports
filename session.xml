@@ -1,0 +1,21 @@
+<NotepadPlus>
+    <Session activeView="0">
+        <mainView activeIndex="11">
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1638" startPos="236" endPos="335" selMode="0" lang="Razor" encoding="-1" filename="D:\Source\Reports\WebMvc\Views\Shared\_MenuGeneral.cshtml" backupFilePath="" originalFileLastModifTimestamp="1457474046" />
+            <File firstVisibleLine="4" xOffset="0" scrollWidth="1728" startPos="651" endPos="1635" selMode="0" lang="C#" encoding="-1" filename="D:\Source\Reports\Reports.Core\Dao\Impl\GpdActDao.cs" backupFilePath="" originalFileLastModifTimestamp="1457028570">
+                <Mark line="25" />
+            </File>
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="896" startPos="2047" endPos="2081" selMode="0" lang="C#" encoding="-1" filename="D:\Source\Reports\WebMvc\Controllers\HomeController.cs" backupFilePath="" originalFileLastModifTimestamp="1457028579" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1240" startPos="939" endPos="943" selMode="0" lang="C#" encoding="-1" filename="D:\Source\Reports\Reports.Core\Dao\Impl\GpdRefDetailDao.cs" backupFilePath="" originalFileLastModifTimestamp="1457028570" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1384" startPos="911" endPos="915" selMode="0" lang="C#" encoding="-1" filename="D:\Source\Reports\Reports.Core\Dao\Impl\GpdContractDao.cs" backupFilePath="" originalFileLastModifTimestamp="1457028570" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="4382" startPos="1777" endPos="1777" selMode="0" lang="C#" encoding="-1" filename="D:\Source\Reports\WebMvc\Controllers\BaseController.cs" backupFilePath="" originalFileLastModifTimestamp="1457478631" />
+            <File firstVisibleLine="30" xOffset="0" scrollWidth="1174" startPos="3470" endPos="3470" selMode="0" lang="Razor" encoding="-1" filename="D:\Source\Reports\WebMvc\Views\Shared\_LayoutGeneral.cshtml" backupFilePath="" originalFileLastModifTimestamp="1457478192" />
+            <File firstVisibleLine="34" xOffset="0" scrollWidth="480" startPos="2791" endPos="1702" selMode="0" lang="C#" encoding="-1" filename="D:\Source\Reports\Reports.Core\Dto\GpdRefDetailDto.cs" backupFilePath="" originalFileLastModifTimestamp="1457028575" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="880" startPos="1249" endPos="1249" selMode="0" lang="C#" encoding="-1" filename="D:\Source\Reports\Reports.CommonWeb\HttpContextService.cs" backupFilePath="" originalFileLastModifTimestamp="1457028568" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="432" startPos="833" endPos="833" selMode="0" lang="C#" encoding="-1" filename="D:\Source\Reports\Reports.Core\Services\IHttpContextService.cs" backupFilePath="" originalFileLastModifTimestamp="1457028576" />
+            <File firstVisibleLine="53" xOffset="0" scrollWidth="1840" startPos="3353" endPos="3361" selMode="0" lang="C#" encoding="-1" filename="D:\Source\Reports\Reports.Presenters\Services\Impl\UserDto.cs" backupFilePath="" originalFileLastModifTimestamp="1457028576" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="614" startPos="131" endPos="131" selMode="0" lang="Normal Text" encoding="-1" filename="D:\Source\npp.6.9.bin\.gitignore" backupFilePath="" originalFileLastModifTimestamp="1457479667" />
+        </mainView>
+        <subView activeIndex="0" />
+    </Session>
+</NotepadPlus>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <StartupShowMode />
+  <MaxNumShownSymbols>2048</MaxNumShownSymbols>
+  <FileSizeLimit>2mb</FileSizeLimit>
+  <FileSizeLimitInc>5mb</FileSizeLimitInc>
+  <GoToDefByCtrlAndLmButton>true</GoToDefByCtrlAndLmButton>
+  <ShowGtdToolTips>true</ShowGtdToolTips>
+  <ShowMenuAtBottom>false</ShowMenuAtBottom>
+  <FlowingMenuButtons>true</FlowingMenuButtons>
+  <HandleCtagsWarnings>false</HandleCtagsWarnings>
+  <CaseSensitiveLanguageMaps>false</CaseSensitiveLanguageMaps>
+  <StartupSessionMode />
+  <SessionFileExt>c00k!e</SessionFileExt>
+  <SaveRelativePaths>false</SaveRelativePaths>
+  <BackColor>-1</BackColor>
+  <ShowInvalidSources>true</ShowInvalidSources>
+  <ShowToolTips>true</ShowToolTips>
+  <ShowPlusMinusSource>false</ShowPlusMinusSource>
+  <ShowPlusMinusTags>true</ShowPlusMinusTags>
+  <SearchInSession>false</SearchInSession>
+  <SessionMode>Cookie</SessionMode>
+  <CookieHistoryList>
+    <string>D:\Source\Reports\bin\Reports.c00k!e</string>
+  </CookieHistoryList>
+  <ViewMode>Grouped</ViewMode>
+  <ShowIcons>true</ShowIcons>
+  <SortTags>false</SortTags>
+  <FoldLevel>1</FoldLevel>
+</Config>

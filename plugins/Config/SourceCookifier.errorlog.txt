@@ -1,0 +1,9 @@
+
+2016-03-01 00-42-16:
+====================
+В документе XML (0, 0) присутствует ошибка.
+   в System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)
+   в System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader)
+   в SourceCookifier.Settings.DeserializeObject(String sourcePath, Type targetType)
+   в SourceCookifier.Settings.LoadConfigs()
+   в SourceCookifier.Main.CommandMenuInit()

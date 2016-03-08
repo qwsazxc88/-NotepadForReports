@@ -1,0 +1,23 @@
+#Move lines up/down to change the button position in toolbar.
+#Replace '+' prefix with '-' to hide button.
++newBtn
+-historyBtn
++validateBtn
++stopBtn
++runBtn
++debugBtn
+---
++loadBtn
+-reloadBtn
++synchBtn
+---
++outputBtn
+-openInVsBtn
+-aboutBtn
+-helpBtn
+-openScriptsFolderBtn
++configBtn
+-deployBtn
++shortcutsBtn
++restartNppBtn
+-favoritesBtn

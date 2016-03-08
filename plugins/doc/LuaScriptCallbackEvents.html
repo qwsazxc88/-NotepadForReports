@@ -1,0 +1,49 @@
+﻿<!-- Version:0.9
+StartHTML:00000172
+EndHTML:00002092
+StartFragment:00000206
+EndFragment:00002056
+SourceURL:https://github.com/dail8859/LuaScript/blob/master/doc/events.md -->
+<html><body>
+<!--StartFragment--><h1>Callback Events</h1>
+
+<p>Scripts can register Lua functions as a callback when certain events 
+take place. Each event type can have mulitple callbacks registered. 
+Supported events include:</p>
+
+<ul>
+<li><code>OnChar(character)</code></li>
+<li><code>OnSavePointReached()</code></li>
+<li><code>OnSavePointLeft()</code></li>
+<li><code>OnBeforeOpen(filename)</code></li>
+<li><code>OnOpen(filename)</code></li>
+<li><code>OnSwitchFile(filename)</code></li>
+<li><code>OnBeforeSave(filename)</code></li>
+<li><code>OnSave(filename)</code></li>
+<li><code>OnBeforeClose(filename)</code></li>
+<li><code>OnClose(filename)</code></li>
+</ul>
+
+<p>The Notepad++ object allows adding, removing, and clearing callback functions for the events. </p>
+
+<ul>
+<li><code>npp.Add&lt;Event&gt;(function)</code></li>
+<li><code>npp.Remove&lt;Event&gt;(function)</code></li>
+<li><code>npp.RemoveAll&lt;Event&gt;()</code></li>
+</ul>
+
+<p>To register for an event, first define your fuction that accepts the 
+parameters (if any). You can then add the callback to the appropriate 
+event. Although callbacks are not required to return a value, in order 
+to ensure forwards compatibility it should return <code>false</code>. For example:</p>
+
+<div class="highlight highlight-source-lua"><pre><span class="pl-k">function</span> <span class="pl-en">printchar</span>(<span class="pl-smi">ch</span>)
+    <span class="pl-c1">print</span>(<span class="pl-s"><span class="pl-pds">"</span>You typed <span class="pl-pds">"</span></span> <span class="pl-k">..</span> ch)
+    <span class="pl-k">return</span> <span class="pl-c1">false</span>
+<span class="pl-k">end</span>
+
+npp.<span class="pl-c1">AddOnChar</span>(printchar)</pre></div>
+
+<p>Take care not to register the same callback twice. To be safe you can attempt to remove it before adding it.</p><!--EndFragment-->
+</body>
+</html>

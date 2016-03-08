@@ -1,0 +1,24 @@
+!_TAG_FILE_FORMAT2/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED0/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHORDarren Hiebert/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAMEExuberant Ctags//
+!_TAG_PROGRAM_URLhttp://ctags.sourceforge.net/official site/
+!_TAG_PROGRAM_VERSION5.8.7.SC//
+WebMvc.ControllersD:\Source\Reports\WebMvc\Controllers\BaseController.cs11;"n
+BaseControllerD:\Source\Reports\WebMvc\Controllers\BaseController.cs14;"cn:WebMvc.Controllersaccess:public
+MaxFileSizeD:\Source\Reports\WebMvc\Controllers\BaseController.cs16;"fc:WebMvc.Controllers.BaseControlleraccess:public
+StrFileSizeErrorD:\Source\Reports\WebMvc\Controllers\BaseController.cs17;"fc:WebMvc.Controllers.BaseControlleraccess:public
+LogD:\Source\Reports\WebMvc\Controllers\BaseController.cs20;"fc:WebMvc.Controllers.BaseControlleraccess:protected
+authenticationServiceD:\Source\Reports\WebMvc\Controllers\BaseController.cs21;"fc:WebMvc.Controllers.BaseControlleraccess:protected
+MaxCommentLengthD:\Source\Reports\WebMvc\Controllers\BaseController.cs25;"fc:WebMvc.Controllers.BaseControlleraccess:public
+GetCommentsD:\Source\Reports\WebMvc\Controllers\BaseController.cs26;"mc:WebMvc.Controllers.BaseControlleraccess:publicsignature:(int PlaceTypeId, int PlaceId)returntype:ActionResult
+AddCommentD:\Source\Reports\WebMvc\Controllers\BaseController.cs32;"mc:WebMvc.Controllers.BaseControlleraccess:publicsignature:(MessagesDto message)returntype:ActionResult
+GetAllDepartmentsTreeD:\Source\Reports\WebMvc\Controllers\BaseController.cs38;"mc:WebMvc.Controllers.BaseControlleraccess:publicsignature:()returntype:ContentResult
+AuthenticationServiceD:\Source\Reports\WebMvc\Controllers\BaseController.cs46;"pc:WebMvc.Controllers.BaseControlleraccess:public
+WriteErrorToLogD:\Source\Reports\WebMvc\Controllers\BaseController.cs64;"mc:WebMvc.Controllers.BaseControlleraccess:publicsignature:(Exception ex,Uri url)returntype:string
+GetFileContextD:\Source\Reports\WebMvc\Controllers\BaseController.cs74;"mc:WebMvc.Controllers.BaseControlleraccess:protectedsignature:()returntype:UploadFileDto
+GetFileContextD:\Source\Reports\WebMvc\Controllers\BaseController.cs81;"mc:WebMvc.Controllers.BaseControlleraccess:publicsignature:(HttpRequestBase request, ModelStateDictionary modelState)returntype:UploadFileDto
+GetFileContextD:\Source\Reports\WebMvc\Controllers\BaseController.cs88;"mc:WebMvc.Controllers.BaseControlleraccess:protectedsignature:(string file)returntype:UploadFileDto
+GetFileContextD:\Source\Reports\WebMvc\Controllers\BaseController.cs109;"mc:WebMvc.Controllers.BaseControlleraccess:protectedsignature:(HttpRequestBase request, ModelStateDictionary modelState, string file)returntype:UploadFileDto
+GetFileDataD:\Source\Reports\WebMvc\Controllers\BaseController.cs127;"mc:WebMvc.Controllers.BaseControlleraccess:protectedsignature:(HttpPostedFileBase file)returntype:byte
+ExcelD:\Source\Reports\WebMvc\Controllers\BaseController.cs136;"mc:WebMvc.Controllers.BaseControlleraccess:publicsignature:(string table)returntype:FileResult

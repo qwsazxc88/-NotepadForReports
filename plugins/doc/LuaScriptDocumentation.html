@@ -1,0 +1,174 @@
+﻿<!-- Version:0.9
+StartHTML:00000161
+EndHTML:00011266
+StartFragment:00000195
+EndFragment:00011230
+SourceURL:https://github.com/dail8859/LuaScript#notepad-object -->
+<html><body>
+<!--StartFragment--><h1>LuaScript</h1>
+
+<p>Notepad++ plugin for <a href="http://www.lua.org/">Lua</a> scripting 
+capabilities. Provides control over all of Scintilla's features and 
+options with a light-weight, fully-functional programming language. 
+Download it from the <a href="https://github.com/dail8859/LuaScript/releases">Release</a> page.</p>
+
+<p>Major features include:</p>
+
+<ul>
+<li>Assign Lua functions to shortcut keys</li>
+<li>Register callbacks to specific events</li>
+<li>Full Lua 5.3 functionality</li>
+<li>Interactive console with auto-completion</li>
+<li>Requires no special permissions</li>
+</ul>
+
+<h2><a id="user-content-examples" class="anchor" href="https://github.com/dail8859/LuaScript#examples" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Examples</h2>
+
+<p>Just show me what it can do!</p>
+
+<ul>
+<li>Change Notepad++'s ugly marker symbols:</li>
+</ul>
+
+<div class="highlight highlight-source-lua"><pre><span class="pl-c">-- Notepad++ uses 24 internally</span>
+editor:<span class="pl-c1">MarkerDefine</span>(<span class="pl-c1">24</span>, SC_MARK_BOOKMARK)
+editor.<span class="pl-smi">MarkerFore</span>[<span class="pl-c1">24</span>] <span class="pl-k">=</span><span class="pl-c1"> 0x0000EE</span>
+editor.<span class="pl-smi">MarkerBack</span>[<span class="pl-c1">24</span>] <span class="pl-k">=</span><span class="pl-c1"> 0x6060F2</span></pre></div>
+
+<ul>
+<li>Find all instances of <code>image345.jpg</code>, <code>image123.png</code>, etc and modify the number:</li>
+</ul>
+
+<div class="highlight highlight-source-lua"><pre><span class="pl-k">for</span> m <span class="pl-k">in</span> editor:<span class="pl-c1">match</span>(<span class="pl-s"><span class="pl-pds">"</span>(image)(<span class="pl-cce">\\</span>d+)(<span class="pl-cce">\\</span>.(jpg|png))<span class="pl-pds">"</span></span>, SCFIND_REGEXP) <span class="pl-k">do</span>
+    i <span class="pl-k">=</span> <span class="pl-c1">tonumber</span>(editor.<span class="pl-smi">Tag</span>[<span class="pl-c1">2</span>])
+    m:<span class="pl-c1">replace</span>(editor.<span class="pl-smi">Tag</span>[<span class="pl-c1">1</span>] <span class="pl-k">..</span> i <span class="pl-k">+</span> <span class="pl-c1">1</span> <span class="pl-k">..</span> editor.<span class="pl-smi">Tag</span>[<span class="pl-c1">3</span>])
+<span class="pl-k">end</span></pre></div>
+
+<ul>
+<li>Get some of Visual Studio's copy and paste functionality:</li>
+</ul>
+
+<div class="highlight highlight-source-lua"><pre><span class="pl-c">-- Mimic Visual Studio's "Ctrl+C" that copies the entire line if nothing is selected</span>
+npp.<span class="pl-c1">AddShortcut</span>(<span class="pl-s"><span class="pl-pds">"</span>Copy Allow Line<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>Ctrl+C<span class="pl-pds">"</span></span>, <span class="pl-k">function</span>()
+    editor:<span class="pl-c1">CopyAllowLine</span>()
+<span class="pl-k">end</span>)
+
+<span class="pl-c">-- Mimic Visual Studio's "Ctrl+X" that cuts the line if nothing is selected</span>
+npp.<span class="pl-c1">AddShortcut</span>(<span class="pl-s"><span class="pl-pds">"</span>Cut Allow Line<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>Ctrl+X<span class="pl-pds">"</span></span>, <span class="pl-k">function</span>()
+    <span class="pl-k">if</span> editor.<span class="pl-smi">SelectionEmpty</span> <span class="pl-k">then</span>
+        editor:<span class="pl-c1">CopyAllowLine</span>()
+        editor:<span class="pl-c1">LineDelete</span>()
+    <span class="pl-k">else</span>
+        editor:<span class="pl-c1">Cut</span>()
+    <span class="pl-k">end</span>
+<span class="pl-k">end</span>)</pre></div>
+
+<h2><a id="user-content-documentation" class="anchor" href="https://github.com/dail8859/LuaScript#documentation" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Documentation</h2>
+
+<h4><a id="user-content-globals" class="anchor" href="https://github.com/dail8859/LuaScript#globals" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Globals</h4>
+
+<p>Global objects/functions are made available to access the editing component.</p>
+
+<ul>
+<li><code>editor</code> - refers to the current editor view. Since Notepad++ has 2 views, this controls the one currently selected
+
+<ul>
+<li><code>editor1</code> - refers to the "first" view</li>
+<li><code>editor2</code> - refers to the "second" view</li>
+</ul></li>
+<li><code>npp</code> - the Notepad++ application itself</li>
+</ul>
+
+<h4><a id="user-content-editor-object" class="anchor" href="https://github.com/dail8859/LuaScript#editor-object" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Editor object</h4>
+
+<p>The full documentation can be found <a href="https://github.com/dail8859/LuaScript/blob/master/doc/editor.md">here</a>. The <code>editor</code> also has a few helper functions:</p>
+
+<ul>
+<li><code>editor:textrange(startPos, endPos)</code>
+
+<ul>
+<li>gets the text in the specified range</li>
+</ul></li>
+<li><code>editor:findtext(text, [flags], [startPos, [endPos]])</code>
+
+<ul>
+<li>returns the start and end of the first match, or <code>nil</code> if no match</li>
+<li>flags can be 0 (the default), or a combination of <a href="http://www.scintilla.org/ScintillaDoc.html#searchFlags">SCFIND</a> constants such as <code>SCFIND_WHOLEWORD</code>, <code>SCFIND_MATCHCASE</code>, and <code>SCFIND_REGEXP</code></li>
+</ul></li>
+<li><code>editor:match(text, [flags], [startPos])</code>
+
+<ul>
+<li>returns a generator that allows you to loop over the matches i.e. <code>for m in editor:match(text, flags) do ... end</code></li>
+<li>the match object (i.e. the loop counter <code>m</code> in the above example) supports read-only properties <code>pos</code>, <code>len</code>, and <code>text</code>; and also supports a function <code>replace(replaceText)</code> to support search and replace.</li>
+<li>while looping through matches, if the document is modified by any 
+method other than the loop counter's replace method, this may cause the 
+match generator to lose its place.</li>
+<li>also, do not attempt to store the match object for later access outside the loop; it will not be useable.</li>
+</ul></li>
+<li><code>editor:append(text)</code>
+
+<ul>
+<li>appends text to the end of the document</li>
+</ul></li>
+<li><code>editor:insert(pos, text)</code>
+
+<ul>
+<li>inserts text at the specified position</li>
+</ul></li>
+<li><code>editor:remove(startPos, endPos)</code>
+
+<ul>
+<li>removes the text in the range</li>
+</ul></li>
+</ul>
+
+<h4><a id="user-content-notepad-object" class="anchor" href="https://github.com/dail8859/LuaScript#notepad-object" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Notepad++ object</h4>
+
+<ul>
+<li><code>npp.ConstantName(number, [hint])</code>
+
+<ul>
+<li>returns the symbolic name of a Scintilla / Notepad++ constant</li>
+<li>optional <code>hint</code> parameter for the name of the appropriate constant</li>
+</ul></li>
+<li><code>npp.MenuCommand(IDM_constant)</code>
+
+<ul>
+<li>runs a menu command using one of the <code>IDM_</code> constants defined in <a href="https://github.com/dail8859/LuaScript/blob/master/Npp/menuCmdID.h">menuCmdID.h</a></li>
+</ul></li>
+<li><code>npp.Add&lt;Event&gt;(function)</code>
+
+<ul>
+<li>adds a function handler for a specific event. Full documentation for events can be found <a href="https://github.com/dail8859/LuaScript/blob/master/doc/events.md">here</a></li>
+</ul></li>
+<li><code>npp.Remove&lt;Event&gt;(function)</code>
+
+<ul>
+<li>removes a previously added function handler for a specific event</li>
+</ul></li>
+<li><code>npp.AddShortcut(name, shortcut, function)</code>
+
+<ul>
+<li>adds a shortcut under the plugin menu. <em>This can only be called during start-up.</em></li>
+<li><code>name</code> the human readable text that will be shown in the menu</li>
+<li><code>shortcut</code> a string that specifies the modifiers and key for the shortcut e.g. <code>"Alt+Shift+F5"</code> or an empty string <code>""</code>
+
+<ul>
+<li>The modifiers (<code>Ctrl</code>, <code>Alt</code>, and <code>Shift</code>) can appear in any order</li>
+<li>The key must be last. It can be <code>A-Z</code>, <code>0-9</code>, or <code>F1-F12</code></li>
+</ul></li>
+<li><code>function</code> the function to be called. It takes no parameters and has no return value</li>
+</ul></li>
+<li><code>npp.WriteError(...)</code>
+
+<ul>
+<li>acts like <code>print</code> but the text is styled in red</li>
+</ul></li>
+<li><code>npp.ClearConsole()</code>
+
+<ul>
+<li>clears the console</li>
+</ul></li>
+</ul><!--EndFragment-->
+</body>
+</html>
